@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/auto-pairs"]
 	path = pack/plugins/start/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "pack/plugins/start/VimCompletesMe"]
+	path = pack/plugins/start/VimCompletesMe
+	url = git@github.com:ajh17/VimCompletesMe.git
