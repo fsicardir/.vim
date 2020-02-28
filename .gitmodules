@@ -13,3 +13,6 @@
 [submodule "pack/plugins/start/vim-radical"]
 	path = pack/plugins/start/vim-radical
 	url = git@github.com:glts/vim-radical.git
+[submodule "pack/plugins/start/vim-gutentags"]
+	path = pack/plugins/start/vim-gutentags
+	url = git@github.com:ludovicchabant/vim-gutentags.git
