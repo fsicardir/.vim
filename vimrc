@@ -6,10 +6,12 @@ let mapleader = "-"
 " --- Custom Mappings ---
 map Y y$
 nnoremap <CR> o<ESC>
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 
 " --- UI ---
 set number
+set relativenumber
 set cmdheight=2
 set ruler
 set laststatus=2
@@ -18,6 +20,7 @@ set showmatch
 set wildmode=longest,list,full
 set wildmenu
 set lazyredraw
+set shortmess+=I
 
 if !&scrolloff
   set scrolloff=1
@@ -39,6 +42,8 @@ endif
 " --- Search ---
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 
 
 " --- Autocomplete ---
@@ -93,6 +98,7 @@ let g:gutentags_cache_dir = '~/.tags'
 " --- Misc ---
 set nomodeline
 set nostartofline
-set novisualbell
+set noerrorbells novisualbell t_vb=
 set history=1000
 set noswapfile
+set hidden
