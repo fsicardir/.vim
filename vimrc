@@ -96,6 +96,7 @@ endif
 let g:gutentags_cache_dir = '~/.tags'
 
 " --- Misc ---
+set viminfo+=n~/.vim/viminfo
 set nomodeline
 set nostartofline
 set noerrorbells novisualbell t_vb=
