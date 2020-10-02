@@ -93,8 +93,6 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
-let g:gutentags_cache_dir = '~/.tags'
-
 " --- Misc ---
 set viminfo+=n~/.vim/viminfo
 set nomodeline
