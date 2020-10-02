@@ -41,7 +41,7 @@ endif
 
 " --- Search ---
 set incsearch
-set hlsearch
+set nohlsearch
 set ignorecase
 set smartcase
 
@@ -87,11 +87,6 @@ let g_gruvbox_contrast_dark='hard'
 set background=dark
 colorscheme gruvbox
 
-
-" --- Plugins ---
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
 
 " --- Misc ---
 set viminfo+=n~/.vim/viminfo
