@@ -1,21 +1,21 @@
 [submodule "pack/default/start/gruvbox"]
 	path = pack/default/start/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
+	url = ../../morhetz/gruvbox.git
 [submodule "pack/plugins/start/vim-surround"]
 	path = pack/plugins/start/vim-surround
-	url = git@github.com:tpope/vim-surround.git
+	url = ../../tpope/vim-surround.git
 [submodule "pack/plugins/start/vim-repeat"]
 	path = pack/plugins/start/vim-repeat
-	url = git@github.com:tpope/vim-repeat.git
+	url = ../../tpope/vim-repeat.git
 [submodule "pack/plugins/start/vim-magnum"]
 	path = pack/plugins/start/vim-magnum
-	url = git@github.com:glts/vim-magnum.git
+	url = ../../glts/vim-magnum.git
 [submodule "pack/plugins/start/vim-radical"]
 	path = pack/plugins/start/vim-radical
-	url = git@github.com:glts/vim-radical.git
+	url = ../../glts/vim-radical.git
 [submodule "pack/plugins/start/auto-pairs"]
 	path = pack/plugins/start/auto-pairs
-	url = git@github.com:jiangmiao/auto-pairs.git
+	url = ../../jiangmiao/auto-pairs.git
 [submodule "pack/plugins/start/YouCompleteMe"]
 	path = pack/plugins/start/YouCompleteMe
-	url = git@github.com:ycm-core/YouCompleteMe.git
+	url = ../../ycm-core/YouCompleteMe.git
