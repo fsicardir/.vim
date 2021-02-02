@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/YouCompleteMe"]
 	path = pack/plugins/start/YouCompleteMe
 	url = ../../ycm-core/YouCompleteMe.git
+[submodule "pack/plugins/start/ctrlp.vim"]
+	path = pack/plugins/start/ctrlp.vim
+	url = ../../ctrlpvim/ctrlp.vim.git
