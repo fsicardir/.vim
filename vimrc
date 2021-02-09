@@ -57,6 +57,7 @@ set softtabstop=4
 set expandtab
 set autoindent
 
+
 " --- Persistent undo ---
 if has('persistent_undo')
     let target_path = expand('~/.config/vim-persistent-undo/')
@@ -66,6 +67,7 @@ if has('persistent_undo')
     let &undodir = target_path
     set undofile
 endif
+
 
 " --- Folding ---
 set foldenable
@@ -86,6 +88,12 @@ let g_gruvbox_contrast_dark='hard'
 
 set background=dark
 colorscheme gruvbox
+
+
+" --- CtrlP ---
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.bin,*.obj,*.o,*.class
+let g:ctrlp_working_path_mode = 'rwa'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 
 " --- Misc ---
