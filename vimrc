@@ -101,3 +101,11 @@ set noerrorbells novisualbell t_vb=
 set history=1000
 set noswapfile
 set hidden
+
+
+" --- GLobal Abbreviations ---
+:iabbrev @@ fsicardir@gmail.com
+:iabbrev _fs Francisco Sicardi
+:iabbrev <expr> _date strftime("%d/%m/%Y")
+:iabbrev <expr> _cdate strftime("%a %d %b %Y")
+:iabbrev <expr> _datetime strftime("%c")
