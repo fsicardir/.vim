@@ -2,23 +2,24 @@ runtime! debian.vim
 
 
 " --- Custom Mappings ---
-let mapleader = "<CR>"
+let mapleader = "\<CR>"
 let maplocalleader = "\\"
 map Y y$
 nnoremap gb :bnext<CR>
 nnoremap gB :bprevious<CR>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-
+nnoremap <silent> <leader>ml :setlocal invmodeline <bar> doautocmd BufRead<cr>
 
 " --- UI ---
 set number
 set relativenumber
-set cmdheight=2
-set ruler
-set laststatus=2
+set cmdheight=1
+set noruler
+set laststatus=1
 set showcmd
 set showmatch
 set wildmode=list:longest
+set wildignorecase
 set lazyredraw
 set shortmess=aoOsAIcT
 
@@ -70,8 +71,8 @@ endif
 
 " --- Folding ---
 set foldenable
-set foldlevelstart=15
 set foldnestmax=10
+set foldlevelstart=15
 set foldmethod=syntax
 
 
