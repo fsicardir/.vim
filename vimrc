@@ -1,6 +1,3 @@
-runtime! debian.vim
-
-
 " --- Custom Mappings ---
 let mapleader = "\<CR>"
 let maplocalleader = "\\"
@@ -10,34 +7,29 @@ nnoremap gB :bprevious<CR>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <silent> <leader>ml :setlocal invmodeline <bar> doautocmd BufRead<cr>
 
+
 " --- UI ---
 set number
 set relativenumber
 set cmdheight=1
 set noruler
-set laststatus=1
+set laststatus=0
+set statusline=\ 
 set showcmd
 set showmatch
 set wildmode=list:longest
 set wildignorecase
 set lazyredraw
 set shortmess=aoOsAIcT
+set scrolloff=1
+set sidescrolloff=5
 
-if !&scrolloff
-  set scrolloff=1
-endif
-if !&sidescrolloff
-  set sidescrolloff=5
-endif
 
-if has("autocmd")
-  filetype plugin indent on
-  " move cursor to where you left
-  :au BufReadPost *
-	 \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-	 \ |   exe "normal! g`\""
-	 \ | endif
-endif
+" --- Startup ---
+:autocmd BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
 
 
 " --- Search ---
@@ -56,11 +48,18 @@ set expandtab
 set smarttab
 set autoindent
 set smartindent
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+
+
+" --- Filetype options ---
+filetype plugin indent on
 
 
 " --- Persistent undo ---
 if has('persistent_undo')
-    let target_path = expand('~/.config/vim-persistent-undo/')
+    let target_path = expand('~/.vim/.persistent-undo/')
     if !isdirectory(target_path)
         call system('mkdir -p ' . target_path)
     endif
@@ -84,7 +83,6 @@ endif
 let g:gruvbox_bold = 1
 let g:gruvbox_underline = 1
 let g:gruvbox_italic = 0
-let g_gruvbox_contrast_dark='hard'
 
 set background=dark
 colorscheme gruvbox
@@ -97,15 +95,16 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 
 " --- Misc ---
-set viminfo+=n~/.vim/viminfo
+set viminfo+=n~/.vim/.viminfo
 set nomodeline
 set noerrorbells novisualbell t_vb=
 set history=1000
 set noswapfile
 set hidden
+set suffixes-=.h
 
 
-" --- GLobal Abbreviations ---
+" --- Global Abbreviations ---
 :iabbrev @@ fsicardir@gmail.com
 :iabbrev _fs Francisco Sicardi
 :iabbrev <expr> _date strftime("%d/%m/%Y")

@@ -1,2 +1,4 @@
 .netrwhist
-viminfo
+.viminfo
+.persistent-undo
+
