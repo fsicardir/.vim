@@ -1,10 +1,10 @@
 runtime! debian.vim
 
-let mapleader = "-"
-
 
 " --- Custom Mappings ---
 map Y y$
+nnoremap gb :bnext<CR>
+nnoremap gB :bprevious<CR>
 nnoremap <CR> o<ESC>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
@@ -17,10 +17,9 @@ set ruler
 set laststatus=2
 set showcmd
 set showmatch
-set wildmode=longest,list,full
-set wildmenu
+set wildmode=list:longest
 set lazyredraw
-set shortmess+=I
+set shortmess=aoOsAIcT
 
 if !&scrolloff
   set scrolloff=1
@@ -47,15 +46,14 @@ set smartcase
 
 
 " --- Autocomplete ---
-set completeopt+=longest
+set completeopt=menu,longest
 
 
 " --- Spaces, tabs and indentation ---
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
 set expandtab
+set smarttab
 set autoindent
+set smartindent
 
 
 " --- Persistent undo ---
@@ -73,7 +71,7 @@ endif
 set foldenable
 set foldlevelstart=15
 set foldnestmax=10
-set foldmethod=indent
+set foldmethod=syntax
 
 
 " --- Colors and theme ---
@@ -99,7 +97,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " --- Misc ---
 set viminfo+=n~/.vim/viminfo
 set nomodeline
-set nostartofline
 set noerrorbells novisualbell t_vb=
 set history=1000
 set noswapfile
