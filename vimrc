@@ -2,10 +2,11 @@ runtime! debian.vim
 
 
 " --- Custom Mappings ---
+let mapleader = "<CR>"
+let maplocalleader = "\\"
 map Y y$
 nnoremap gb :bnext<CR>
 nnoremap gB :bprevious<CR>
-nnoremap <CR> o<ESC>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 
