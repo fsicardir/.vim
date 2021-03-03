@@ -6,6 +6,8 @@ nnoremap gb :bnext<CR>
 nnoremap gB :bprevious<CR>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <silent> <leader>ml :setlocal invmodeline <bar> doautocmd BufRead<cr>
+nnoremap <leader>ev :edit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 
 " --- UI ---
