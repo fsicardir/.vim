@@ -22,7 +22,7 @@ set showmatch
 set wildmode=list:longest
 set wildignorecase
 set lazyredraw
-set shortmess=aoOsAIcT
+set shortmess=aoOsAIctT
 set scrolloff=1
 set sidescrolloff=5
 
