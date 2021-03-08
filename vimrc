@@ -1,5 +1,5 @@
 " --- Custom Mappings ---
-let mapleader = "\<CR>"
+let mapleader = "\<Space>"
 let maplocalleader = "\\"
 map Y y$
 nnoremap gb :bnext<CR>
