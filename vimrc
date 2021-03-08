@@ -5,9 +5,10 @@ map Y y$
 nnoremap gb :bnext<CR>
 nnoremap gB :bprevious<CR>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-nnoremap <silent> <leader>ml :setlocal invmodeline <bar> doautocmd BufRead<cr>
+nnoremap <silent> <leader>ml :setlocal invmodeline <BAR> doautocmd BufRead<CR>
 nnoremap <leader>ev :edit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <silent> <leader>c :silent make <BAR> unsilent redraw! <BAR> cwindow<CR>
 
 
 " --- UI ---
@@ -99,6 +100,7 @@ set history=1000
 set noswapfile
 set hidden
 set suffixes-=.h
+set autowrite
 
 
 " --- Global Abbreviations ---
