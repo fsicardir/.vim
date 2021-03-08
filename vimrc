@@ -91,12 +91,6 @@ set background=dark
 colorscheme gruvbox
 
 
-" --- CtrlP ---
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.bin,*.obj,*.o,*.class
-let g:ctrlp_working_path_mode = 'rwa'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
-
 " --- Misc ---
 set viminfo+=n~/.vim/.viminfo
 set nomodeline
