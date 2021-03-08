@@ -1,2 +1,2 @@
-setlocal makeprg=shellcheck\ -s\ bash\ -f\ gcc\ --\ %:S
-setlocal errorformat=%f:%l:%c:\ %m\ [SC%n]
+CompilerSet makeprg=shellcheck\ -s\ bash\ -f\ gcc\ --\ %:S
+CompilerSet errorformat=%f:%l:%c:\ %m\ [SC%n]
