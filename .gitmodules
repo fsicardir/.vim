@@ -10,6 +10,3 @@
 [submodule "pack/plugins/start/auto-pairs"]
 	path = pack/plugins/start/auto-pairs
 	url = ../../jiangmiao/auto-pairs.git
-[submodule "pack/plugins/start/ctrlp.vim"]
-	path = pack/plugins/start/ctrlp.vim
-	url = ../../ctrlpvim/ctrlp.vim.git
