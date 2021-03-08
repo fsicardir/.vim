@@ -19,7 +19,8 @@ set laststatus=0
 set statusline=\ 
 set showcmd
 set showmatch
-set wildmode=list:longest
+set wildmenu
+set wildmode=list:longest,full
 set wildignorecase
 set lazyredraw
 set shortmess=aoOsAIctT
