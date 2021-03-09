@@ -69,11 +69,7 @@ filetype plugin indent on
 
 " --- Persistent undo ---
 if has('persistent_undo')
-    let target_path = expand('~/.vim/.persistent-undo/')
-    if !isdirectory(target_path)
-        call system('mkdir -p ' . target_path)
-    endif
-    let &undodir = target_path
+    let &undodir = expand('~/.vim/.persistent-undo/')
     set undofile
 endif
 
@@ -107,6 +103,7 @@ set noswapfile
 set hidden
 set suffixes-=.h
 set autowrite
+set backspace=indent,eol,start
 
 
 " --- Plugins ---
