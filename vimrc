@@ -19,9 +19,6 @@ set laststatus=0
 set statusline=\ 
 set showcmd
 set showmatch
-set wildmenu
-set wildmode=list:longest,full
-set wildignorecase
 set lazyredraw
 set shortmess=aoOsAIctT
 set scrolloff=1
@@ -53,6 +50,9 @@ set smartcase
 
 " --- Autocomplete ---
 set completeopt=menu,longest
+set wildmenu
+set wildmode=list:longest,full
+set wildignorecase
 
 
 " --- Spaces, tabs and indentation ---
@@ -107,6 +107,10 @@ set noswapfile
 set hidden
 set suffixes-=.h
 set autowrite
+
+
+" --- Plugins ---
+runtime macros/matchit.vim
 
 
 " --- Global Abbreviations ---
