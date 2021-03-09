@@ -8,8 +8,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <silent> <leader>ml :setlocal invmodeline <BAR> doautocmd BufRead<CR>
 nnoremap <leader>ev :edit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <silent> <leader>c :silent make <BAR> unsilent redraw! <BAR> cwindow<CR>
-
+nnoremap <silent> <leader>c :make<C-[><CR>
 
 " --- UI ---
 set number
@@ -29,11 +28,17 @@ set scrolloff=1
 set sidescrolloff=5
 
 
-" --- Startup ---
-:autocmd BufReadPost *
+" --- Useful autocommands ---
+autocmd BufReadPost *
       \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
       \ |   exe "normal! g`\""
       \ | endif
+
+augroup open_quickfix
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l* lwindow
+augroup END
 
 
 " --- Search ---
@@ -104,8 +109,10 @@ set autowrite
 
 
 " --- Global Abbreviations ---
-:iabbrev @@ fsicardir@gmail.com
-:iabbrev _fs Francisco Sicardi
-:iabbrev <expr> _date strftime("%d/%m/%Y")
-:iabbrev <expr> _cdate strftime("%a %d %b %Y")
-:iabbrev <expr> _datetime strftime("%c")
+iabbrev @@ fsicardir@gmail.com
+iabbrev _fs Francisco Sicardi
+iabbrev <expr> _date strftime("%d/%m/%Y")
+iabbrev <expr> _cdate strftime("%a %d %b %Y")
+iabbrev <expr> _datetime strftime("%c")
+
+cnoreabbrev <expr> make (getcmdtype() ==# ':' && getcmdline() =~# '^make') ? 'silent make \| redraw!' : 'make'
