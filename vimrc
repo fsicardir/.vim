@@ -8,7 +8,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <silent> <leader>ml :setlocal invmodeline <BAR> doautocmd BufRead<CR>
 nnoremap <leader>ev :edit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <silent> <leader>c :make<C-[><CR>
+nnoremap <silent> <leader>m :make<C-[><CR>
 
 " --- UI ---
 set number
@@ -29,10 +29,13 @@ set sidescrolloff=5
 
 
 " --- Useful autocommands ---
-autocmd BufReadPost *
-      \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-      \ |   exe "normal! g`\""
-      \ | endif
+augroup last_cursor_position
+    autocmd!
+    autocmd BufReadPost *
+          \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+          \ | exe "normal! g`\""
+          \ | endif
+augroup END
 
 augroup open_quickfix
     autocmd!
@@ -53,13 +56,11 @@ set completeopt=menu,longest
 
 
 " --- Spaces, tabs and indentation ---
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set smarttab
 set autoindent
-set smartindent
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
 
 
 " --- Filetype options ---
