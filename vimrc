@@ -114,10 +114,10 @@ runtime macros/matchit.vim
 
 
 " --- Global Abbreviations ---
-iabbrev @@ fsicardir@gmail.com
-iabbrev _fs Francisco Sicardi
-iabbrev <expr> _date strftime("%d/%m/%Y")
-iabbrev <expr> _cdate strftime("%a %d %b %Y")
-iabbrev <expr> _datetime strftime("%c")
+inoreabbrev @@ fsicardir@gmail.com
+inoreabbrev _fs Francisco Sicardi
+inoreabbrev <expr> _date strftime("%d/%m/%Y")
+inoreabbrev <expr> _cdate strftime("%a %d %b %Y")
+inoreabbrev <expr> _datetime strftime("%c")
 
 cnoreabbrev <expr> make (getcmdtype() ==# ':' && getcmdline() =~# '^make') ? 'silent make \| redraw!' : 'make'
