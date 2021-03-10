@@ -5,10 +5,11 @@ map Y y$
 nnoremap gb :bnext<CR>
 nnoremap gB :bprevious<CR>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-nnoremap <silent> <leader>ml :setlocal invmodeline <BAR> doautocmd BufRead<CR>
+nnoremap <silent> <leader>im :setlocal invmodeline <BAR> doautocmd BufRead<CR>
 nnoremap <leader>ev :edit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <silent> <leader>m :make<C-[><CR>
+
 
 " --- UI ---
 set number
@@ -38,6 +39,11 @@ augroup open_quickfix
     autocmd!
     autocmd QuickFixCmdPost [^l]* cwindow
     autocmd QuickFixCmdPost l* lwindow
+augroup END
+
+augroup redraw_after_shell
+    autocmd!
+    autocmd ShellCmdPost * redraw!
 augroup END
 
 
@@ -117,4 +123,7 @@ inoreabbrev <expr> _date strftime("%d/%m/%Y")
 inoreabbrev <expr> _cdate strftime("%a %d %b %Y")
 inoreabbrev <expr> _datetime strftime("%c")
 
-cnoreabbrev <expr> make (getcmdtype() ==# ':' && getcmdline() =~# '^make') ? 'silent make \| redraw!' : 'make'
+cnoreabbrev <expr> make (getcmdtype() ==# ':' && getcmdline() =~# '^make') ? 'silent make' : 'make'
+cnoreabbrev <expr> lmake (getcmdtype() ==# ':' && getcmdline() =~# '^lmake') ? 'silent lmake' : 'lmake'
+cnoreabbrev <expr> grep (getcmdtype() ==# ':' && getcmdline() =~# '^grep') ? 'silent grep' : 'grep'
+cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() =~# '^lgrep') ? 'silent lgrep' : 'lgrep'
