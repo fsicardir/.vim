@@ -24,8 +24,8 @@ set lazyredraw
 set shortmess=aoOsAIctT
 set scrolloff=1
 set sidescrolloff=5
-let &t_SI = "\e[5 q"
-let &t_EI = "\e[2 q"
+let &t_SI = "\<esc>[5 q"
+let &t_EI = "\<esc>[2 q"
 let &t_ti .= "\<esc>[2 q"
 
 
