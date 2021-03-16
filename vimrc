@@ -49,6 +49,11 @@ augroup redraw_after_shell
     autocmd ShellCmdPost * redraw!
 augroup END
 
+augroup print_file_info
+    autocmd!
+    autocmd WinEnter * file
+augroup END
+
 
 " --- Search ---
 set incsearch
