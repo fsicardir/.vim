@@ -1,9 +1,31 @@
+" --- Functions ---
+function! PrintError(msg) abort
+    echohl ErrorMsg
+    echomsg join(split(a:msg, ":")[1:], ":")
+    echohl None
+endfunction
+
+function! MapWithCount(cmd) abort
+    try
+        execute v:count1 . a:cmd
+    catch
+        call PrintError(v:exception)
+    endtry
+endfunction
+
+
 " --- Custom Mappings ---
 let mapleader = "\<Space>"
 let maplocalleader = "\\"
 map Y y$
-nnoremap gb :bnext<CR>
-nnoremap gB :bprevious<CR>
+nnoremap <silent> gb :<C-U>call MapWithCount('bnext')<CR>
+nnoremap <silent> gB :<C-U>call MapWithCount('bprevious')<CR>
+nnoremap <silent> [q :<C-U>call MapWithCount('cprevious')<CR>
+nnoremap <silent> ]q :<C-U>call MapWithCount('cnext')<CR>
+nnoremap <silent> [l :<C-U>call MapWithCount('lprevious')<CR>
+nnoremap <silent> ]l :<C-U>call MapWithCount('lnext')<CR>
+nnoremap [<CR> O<ESC>
+nnoremap ]<CR> o<ESC>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <silent> <leader>im :setlocal invmodeline <BAR> doautocmd BufRead<CR>
 nnoremap <leader>ev :edit $MYVIMRC<CR>
@@ -49,7 +71,7 @@ augroup redraw_after_shell
     autocmd ShellCmdPost * redraw!
 augroup END
 
-augroup print_file_info
+augroup file_info
     autocmd!
     autocmd WinEnter * file
 augroup END
