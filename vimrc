@@ -1,5 +1,5 @@
 " --- Functions ---
-function! PrintError() abort
+function! PrintCmdError() abort
     echohl ErrorMsg
     echomsg join(split(v:exception, ":")[1:], ":")
     echohl None
@@ -9,7 +9,7 @@ function! MapWithCount(cmd) abort
     try
         execute v:count1 . a:cmd
     catch
-        call PrintError()
+        call PrintCmdError()
     endtry
 endfunction
 
