@@ -9,7 +9,7 @@ let b:undo_ftplugin .= '|setlocal makeprg< errorformat<'
       \ . '|nunmap <buffer> <Leader>s'
 
 if executable('shellckeck')
-    :compiler shellcheck
+    compiler shellcheck
 else
-    :compiler bash
+    compiler bash
 endif
