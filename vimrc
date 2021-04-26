@@ -151,7 +151,8 @@ inoreabbrev @@ fsicardir@gmail.com
 inoreabbrev _fs Francisco Sicardi
 inoreabbrev <expr> _date strftime("%d/%m/%Y")
 inoreabbrev <expr> _cdate strftime("%a %d %b %Y")
-inoreabbrev <expr> _datetime strftime("%c")
+inoreabbrev <expr> _pdatetime strftime("%c")
+inoreabbrev <expr> _datetime strftime("%FT%T")
 
 cnoreabbrev <expr> make (getcmdtype() ==# ':' && getcmdline() =~# '^make') ? 'silent make' : 'make'
 cnoreabbrev <expr> lmake (getcmdtype() ==# ':' && getcmdline() =~# '^lmake') ? 'silent lmake' : 'lmake'
