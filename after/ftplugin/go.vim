@@ -7,7 +7,9 @@ endif
 setlocal noet ts=4 sw=4 sts=4
 
 function! Format()
+    let pos = getcurpos()
     normal gggqG
+    call setpos(".", pos)
     if v:shell_error != 0
         undo
     endif
