@@ -1,5 +1,5 @@
 if executable('goimports')
-    set formatprg=goimports\ 2>/dev/null
+    let &l:formatprg = 'cd ' . expand('%:h') . ' && goimports 2>/dev/null'
 else
     set formatprg=goformat\ -s\ 2>/dev/null
 endif
