@@ -23,3 +23,4 @@ augroup END
 nnoremap <silent> <leader>l :silent cexpr system('golint ' . shellescape(expand('%')))<CR>
 
 compiler go
+set makeprg=go\ build\ %:S
