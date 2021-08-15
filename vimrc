@@ -41,7 +41,6 @@ set noruler
 set laststatus=0
 set statusline=\ 
 set showcmd
-set showmatch
 set lazyredraw
 set shortmess=aoOsAIctT
 set scrolloff=1
@@ -79,7 +78,7 @@ augroup END
 
 " --- Search ---
 set incsearch
-set nohlsearch
+set hlsearch
 set ignorecase
 set smartcase
 
@@ -151,7 +150,7 @@ inoreabbrev @@ fsicardir@gmail.com
 inoreabbrev _fs Francisco Sicardi
 inoreabbrev <expr> _date strftime("%d/%m/%Y")
 inoreabbrev <expr> _cdate strftime("%a %d %b %Y")
-inoreabbrev <expr> _pdatetime strftime("%c")
+inoreabbrev <expr> _cdatetime strftime("%c")
 inoreabbrev <expr> _datetime strftime("%FT%T")
 
 cnoreabbrev <expr> make (getcmdtype() ==# ':' && getcmdline() =~# '^make') ? 'silent make' : 'make'
