@@ -27,7 +27,6 @@ nnoremap <silent> ]l :<C-U>call MapWithCount('lnext')<CR>
 nnoremap [<CR> O<ESC>
 nnoremap ]<CR> o<ESC>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-nnoremap <silent> <leader>im :setlocal invmodeline <BAR> doautocmd BufRead<CR>
 nnoremap <leader>ev :edit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <silent> <leader>m :make<C-[><CR>
