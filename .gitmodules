@@ -7,3 +7,15 @@
 [submodule "pack/plugins/start/vim-repeat"]
 	path = pack/plugins/start/vim-repeat
 	url = ../../tpope/vim-repeat.git
+[submodule "pack/plugins/opt/vim-lsp"]
+	path = pack/plugins/opt/vim-lsp
+	url = ../../prabirshrestha/vim-lsp
+[submodule "pack/plugins/opt/vim-lsp-settings"]
+	path = pack/plugins/opt/vim-lsp-settings
+	url = ../../mattn/vim-lsp-settings
+[submodule "pack/plugins/opt/asyncomplete.vim"]
+	path = pack/plugins/opt/asyncomplete.vim
+	url = ../../prabirshrestha/asyncomplete.vim
+[submodule "pack/plugins/opt/asyncomplete-lsp.vim"]
+	path = pack/plugins/opt/asyncomplete-lsp.vim
+	url = ../../prabirshrestha/asyncomplete-lsp.vim
