@@ -142,6 +142,15 @@ set backspace=indent,eol,start
 
 " --- Plugins ---
 runtime macros/matchit.vim
+" Lazy-load LSP and autocompletion
+command! LSP
+	\   packadd async.vim
+	\ | packadd vim-lsp
+	\ | packadd vim-lsp-settings
+	\ | call lsp#enable()
+	\ | packadd asyncomplete.vim
+	\ | packadd asyncomplete-lsp.vim
+	\ | silent! bufdo! e
 
 
 " --- Global Abbreviations ---
