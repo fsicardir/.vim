@@ -138,10 +138,37 @@ set hidden
 set suffixes-=.h
 set autowrite
 set backspace=indent,eol,start
+set signcolumn=no
 
 
 " --- Plugins ---
 runtime macros/matchit.vim
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nnoremap <buffer> gd <plug>(lsp-definition)
+    nnoremap <buffer> gs <plug>(lsp-document-symbol-search)
+    nnoremap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nnoremap <buffer> gr <plug>(lsp-references)
+    nnoremap <buffer> gi <plug>(lsp-implementation)
+    nnoremap <buffer> gt <plug>(lsp-type-definition)
+    nnoremap <buffer> <leader>rn <plug>(lsp-rename)
+    nnoremap <buffer> <leader>a <plug>(lsp-code-action)
+    vnoremap <leader>a :LspCodeAction<CR>
+    nnoremap <buffer> <leader>l :silent LspDocumentDiagnostic<CR>
+    nnoremap <buffer> K <plug>(lsp-hover)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
 " Lazy-load LSP and autocompletion
 command! LSP
 	\   packadd async.vim
