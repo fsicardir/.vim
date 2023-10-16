@@ -34,7 +34,6 @@ nnoremap <silent> <leader>m :make<C-[><CR>
 
 " --- UI ---
 set number
-set relativenumber
 set cmdheight=1
 set noruler
 set laststatus=0
